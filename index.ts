@@ -124,6 +124,7 @@ export {
   darkTheme,
   getCssText,
   globalCss,
+  initStitches,
   keyframes,
   lightTheme,
   styled,
