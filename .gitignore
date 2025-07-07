@@ -42,3 +42,4 @@ yarn-error.log*
 /storybook-static
 
 .parcel-cache
+.rollup.cache/

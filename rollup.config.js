@@ -1,5 +1,6 @@
-import typescript from 'rollup-plugin-typescript2';
 import babel from '@rollup/plugin-babel';
+import typescript from '@rollup/plugin-typescript';
+import ts from 'typescript';
 
 import pkg from './package.json';
 
@@ -23,9 +24,10 @@ export default {
   ],
   plugins: [
     typescript({
-      clean: true,
-      tsconfig: 'tsconfig-rollup.json',
-      typescript: require('typescript'),
+      tsconfig: 'tsconfig.rollup.json',
+      outputToFilesystem: true,
+      noForceEmit: false, // Slower build times, and additional types, but preserve the previous behavior.
+      typescript: ts,
     }),
     babel({
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
